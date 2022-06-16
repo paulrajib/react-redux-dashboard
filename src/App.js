@@ -1,3 +1,9 @@
+//import 'bootstrap/dist/css/bootstrap.min.css';
+//import $ from 'jquery';
+//import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+import './app.scss';
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";

@@ -1,8 +1,10 @@
 import React from 'react';
-import "./login.scss" ;
+import "./login.scss";
 
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <div>Login</div>
+  );
 };
 
 export default Login;
