@@ -7,10 +7,19 @@ const Sidebar = () => {
 
         <div className="nav-side-menu">
             <div className="brand">Brand Logo</div>
-            <i className="fa fa-bars fa-2x toggle-btn" data-bs-toggle="collapse" data-bs-target="#menu-content"></i>
+
+            <button className="toggle-btn navbar-toggler sm-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#menu-content"
+            aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+                <div className="animated-icon1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            {/*<i className="fa fa-bars fa-2x toggle-btn" data-bs-toggle="collapse" data-bs-target="#menu-content"></i>*/}
           
-                <div className="menu-list">
-          
+                <div className="menu-list">          
                     <ul id="menu-content" className="menu-content collapse out">
                         <li>
                           <a href="#">
