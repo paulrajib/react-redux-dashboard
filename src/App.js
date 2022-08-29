@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+
         <Routes>
           <Route path="/">
 
@@ -31,13 +32,14 @@ function App() {
             <Route path="login" element={<Login />} />
 
             <Route path="users">
-              <Route index element={<List />} />
-              <Route path=":userId" element={<Single />} />
-              <Route path="new" element={<New />} />
-            </Route>
-            
+            <Route index element={<List />} />
+            <Route path=":userId" element={<Single />} />
+            <Route path="new" element={<New />} />
+          </Route>
+
           </Route>
         </Routes>
+
       </BrowserRouter>
     </div>
   );
