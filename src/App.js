@@ -3,8 +3,8 @@
 //import $ from 'jquery';
 //import Popper from 'popper.js';
 //import $ from 'jquery/dist/jquery.js';
-//import './assets/js/custom.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './assets/js/custom.js';
 
 import './app.scss';
 import Home from "./pages/home/Home";
