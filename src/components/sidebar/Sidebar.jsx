@@ -26,7 +26,7 @@ const Sidebar = () => {
                 <ul id="menu-content" className="menu-content collapse out">
                     <li>
                       <a href="/test">
-                      <i className="fas fa-tachometer-alt fa-lg"></i> Dashboard
+                        <i className="fas fa-tachometer-alt fa-lg"></i> Dashboard
                       </a>
                     </li>
 
