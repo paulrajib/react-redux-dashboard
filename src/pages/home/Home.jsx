@@ -12,16 +12,20 @@ const Home = () => {
     <Sidebar />
     <div className="homeContainer">
       <Navbar />
-      <div className="widgets">
-        <Widget type="user"/>
-        <Widget type="order"/>
-        <Widget type="earnings"/>
-        <Widget type="balance"/>
+
+      <div className="container">
+        <div className="row widgets">
+          <Widget type="user" className="col-3"/>
+          <Widget type="order" className="col-3"/>
+          <Widget type="earnings" className="col-3"/>
+          <Widget type="balance" className="col-3"/>
+        </div>
+        <div className="charts">
+          <Featured/>
+          <Chart/>
+        </div>
       </div>
-      <div className="charts">
-        <Featured/>
-        <Chart/>
-      </div>
+
     </div>
   </div>);
 }

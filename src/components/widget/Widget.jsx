@@ -53,7 +53,7 @@ const Widget = ({type}) => {
     }
 
     return (
-        <div className="widget">
+        <div className="col widget">
             <div className="left">
                 <div className="title">{data.title}</div>
                 <div className="counter">{data.isMoney && "$"} {amount}</div>

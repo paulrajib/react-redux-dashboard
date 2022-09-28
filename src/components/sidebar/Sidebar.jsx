@@ -92,11 +92,11 @@ const Sidebar = () => {
                 </ul>
             </div>
 
-            <div className="bottom">
+            {/* <div className="bottom">
               <div className="colorOptions"></div>
               <div className="colorOptions"></div>
               <div className="colorOptions"></div>
-            </div>
+            </div> */}
         </div>
 
 
