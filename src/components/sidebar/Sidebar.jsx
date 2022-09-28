@@ -25,13 +25,15 @@ const Sidebar = () => {
             <div className="menu-list">          
                 <ul id="menu-content" className="menu-content collapse out">
                     <li>
-                      <a href="/test">
+                      {/* // eslint-disable-next-line */}
+                      <a href="#">
                         <i className="fas fa-tachometer-alt fa-lg"></i> Dashboard
                       </a>
                     </li>
 
                     <li  data-bs-toggle="collapse" data-bs-target="#products" className="collapsed active">
-                      <a href="/test"><i className="fab fa-studiovinari fa-lg"></i> UI Elements <span className="arrow"></span></a>
+                    {/* // eslint-disable-next-line */}
+                      <a href="#"><i className="fab fa-studiovinari fa-lg"></i> UI Elements <span className="arrow"></span></a>
                     </li>
                     <ul className="sub-menu collapse" id="products">
                         <li className="active"><a href="/test">CSS3 Animation</a></li>
@@ -48,7 +50,8 @@ const Sidebar = () => {
 
 
                     <li data-bs-toggle="collapse" data-bs-target="#service" className="collapsed">
-                      <a href="/test"><i className="fab fa-fort-awesome-alt fa-lg"></i> Services <span className="arrow"></span></a>
+                    {/* // eslint-disable-next-line */}
+                      <a href="#"><i className="fab fa-fort-awesome-alt fa-lg"></i> Services <span className="arrow"></span></a>
                     </li>  
                     <ul className="sub-menu collapse" id="service">
                       <li>New Service 1</li>
@@ -58,7 +61,8 @@ const Sidebar = () => {
 
 
                     <li data-bs-toggle="collapse" data-bs-target="#new" className="collapsed">
-                      <a href="/test"><i className="fab fa-pagelines fa-lg"></i> New <span className="arrow"></span></a>
+                    {/* // eslint-disable-next-line */}
+                      <a href="#"><i className="fab fa-pagelines fa-lg"></i> New <span className="arrow"></span></a>
                     </li>
                     <ul className="sub-menu collapse" id="new">
                       <li>New New 1</li>
