@@ -47,12 +47,13 @@ const data = [
     },
   ];
 
-const Chart = () => {
+const Chart = ({aspect, title}) => {
   return (
       <div className="chart">
-        <div className="title">Last 6 Months (Revenue)</div>
+        <div className="title">{title}</div>
             {/* <ResponsiveContainer width="100%" height="80%"> */}
-            <ResponsiveContainer width="95%" aspect={5/3}>
+            {/* <ResponsiveContainer width="95%" aspect={5/3}> */}
+            <ResponsiveContainer width="95%" aspect={aspect}>
                 <AreaChart width={730} height={250} data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <defs>
                         <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -67,7 +68,7 @@ const Chart = () => {
                     <XAxis dataKey="name" stroke='gray'/>
                     <YAxis />
                     <CartesianGrid strokeDasharray="3 3" className='chartGrid'/>
-                    <Tooltip />
+                    <Tooltip /> 
                     <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
                     <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
                 </AreaChart>
