@@ -10,7 +10,7 @@ const New = (inputs, title) => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1 className="title">{title}</h1>
+          <h1 className="title">Add New User</h1>
         </div>
         <div className="bottom">
           <div className="left">
@@ -30,14 +30,18 @@ const New = (inputs, title) => {
               </div>
 
               {/* {console.log(inputs.inputs)} */}
-              {inputs.map((input) => (
+              {/* {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label htmlFor="">{input.label}</label>
                   <input type={input.type} placeholder={input.placeholder} />
                 </div>
-              ))}
+              ))} */}
 
-              {/* <div className="formInput">
+              <div className="formInput">
+                <label htmlFor="">Username</label>
+                <input type="text" placeholder="John Doe" />
+              </div>
+              <div className="formInput">
                 <label htmlFor="">Name and surname</label>
                 <input type="text" placeholder="John Doe" />
               </div>
@@ -60,8 +64,7 @@ const New = (inputs, title) => {
               <div className="formInput">
                 <label htmlFor="">Country</label>
                 <input type="text" placeholder="USA" />
-              </div> */}
-
+              </div>
               <button>Send</button>
             </form>
           </div>
