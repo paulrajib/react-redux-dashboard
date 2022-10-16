@@ -24,11 +24,21 @@ const Datatable = () => {
   ];
   return (
     <div className="datatable">
+      <div className="datatableTitle">
+        Add New User
+        <Link
+          to="/users/new"
+          style={{ textDecoration: "none" }}
+          className="link"
+        >
+          Add New
+        </Link>
+      </div>
       <DataGrid
         rows={userRows}
         columns={userColumns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
+        pageSize={6}
+        rowsPerPageOptions={[6]}
         checkboxSelection
       />
     </div>
