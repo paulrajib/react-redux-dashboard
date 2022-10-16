@@ -3,12 +3,15 @@
 //import $ from 'jquery';
 
 import "./sidebar.scss";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="nav-side-menu">
-        <div className="brand">Brand Logo</div>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <div className="brand">Brand Logo</div>
+        </Link>
 
         <button
           className="toggle-btn navbar-toggler sm-toggle-btn"
@@ -39,7 +42,7 @@ const Sidebar = () => {
 
             <li
               data-bs-toggle="collapse"
-              data-bs-target="#products"
+              data-bs-target="#elements"
               className="collapsed active"
             >
               {/* // eslint-disable-next-line */}
@@ -48,7 +51,7 @@ const Sidebar = () => {
                 <span className="arrow"></span>
               </a>
             </li>
-            <ul className="sub-menu collapse" id="products">
+            <ul className="sub-menu collapse" id="elements">
               <li className="active">
                 <a href="/test">CSS3 Animation</a>
               </li>
@@ -100,26 +103,47 @@ const Sidebar = () => {
 
             <li
               data-bs-toggle="collapse"
-              data-bs-target="#new"
+              data-bs-target="#users"
               className="collapsed"
             >
               {/* // eslint-disable-next-line */}
               <a href="#">
-                <i className="fab fa-pagelines fa-lg"></i> New{" "}
+                <i className="fa fa-users fa-lg"></i> Users{" "}
                 <span className="arrow"></span>
               </a>
             </li>
-            <ul className="sub-menu collapse" id="new">
-              <li>New New 1</li>
-              <li>New New 2</li>
+            <ul className="sub-menu collapse" id="users">
+              <Link to="/users" style={{ textDecoration: "none" }}>
+                <li>Users</li>
+              </Link>
+              <Link to="/users/new" style={{ textDecoration: "none" }}>
+                <li>Add new</li>
+              </Link>
+              <li>user</li>
               <li>New New 3</li>
             </ul>
 
-            <li>
-              <a href="/test">
-                <i className="fa fa-users fa-lg"></i> Users
+            <li
+              data-bs-toggle="collapse"
+              data-bs-target="#products"
+              className="collapsed"
+            >
+              {/* // eslint-disable-next-line */}
+              <a href="#">
+                <i className="fab fa-pagelines fa-lg"></i> Products{" "}
+                <span className="arrow"></span>
               </a>
             </li>
+            <ul className="sub-menu collapse" id="products">
+              <Link to="/products" style={{ textDecoration: "none" }}>
+                <li>Products</li>
+              </Link>
+              <Link to="/products/new" style={{ textDecoration: "none" }}>
+                <li>New</li>
+              </Link>
+              <li>New New 2</li>
+              <li>New New 3</li>
+            </ul>
 
             <li>
               <a href="/test">
