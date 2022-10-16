@@ -35,10 +35,11 @@ const Datatable = () => {
         </Link>
       </div>
       <DataGrid
+        className="datagrid"
         rows={userRows}
         columns={userColumns.concat(actionColumn)}
-        pageSize={6}
-        rowsPerPageOptions={[6]}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
         checkboxSelection
       />
     </div>

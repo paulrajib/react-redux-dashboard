@@ -20,4 +20,58 @@
       }
     }
   }
+
+  .sidebar {
+    background-color: #111;
+    border-color: #333;
+
+    .nav-side-menu {
+      background-color: transparent;
+    }
+
+    .brand {
+      color: gray;
+    }
+
+    hr {
+      border-color: #333;
+    }
+
+    ul {
+      li {
+        &:hover {
+          background-color: #333;
+          color: #fff;
+        }
+
+        .icon {
+          color: #999;
+        }
+      }
+    }
+  }
+
+  .datatable {
+    .datagrid {
+      color: gray;
+      border: none;
+      .viewButton,
+      .deleteButton,
+      .cellWithStatus {
+        color: gray;
+        border: none;
+        &:hover {
+          color: #999;
+        }
+      }
+    }
+  }
+
+  input {
+    background-color: transparent;
+    &::placeholder {
+      color: gray;
+      opacity: 1;
+    }
+  }
 }
