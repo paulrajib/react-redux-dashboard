@@ -2,12 +2,22 @@ import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import "./new.scss";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
+  const [username, setUsername] = useState("");
 
-  console.log(file);
+  const usernameRef = useRef();
+
+  console.log(username);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // const data = new FormData(e.target);
+    // console.log(usernameRef);
+  };
+
   return (
     <div className="new">
       <Sidebar />
@@ -28,13 +38,12 @@ const New = ({ inputs, title }) => {
             />
           </div>
           <div className="right">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <div className="formInput">
                 <label htmlFor="file">
                   Image:
                   <DriveFolderUploadOutlinedIcon className="uploadIcon" />
                 </label>
-
                 <input
                   type="file"
                   id="file"
@@ -44,9 +53,18 @@ const New = ({ inputs, title }) => {
               </div>
 
               {inputs.map((input) => (
-                <div className="formInput" key={input.id}>
+                <div
+                  className="formInput"
+                  setUsername={setUsername}
+                  key={input.id}
+                >
                   <label htmlFor="">{input.label}</label>
-                  <input type={input.type} placeholder={input.placeholder} />
+                  <input
+                    onChange={(e) => setUsername(e.target.value)}
+                    type={input.type}
+                    name={input.name}
+                    placeholder={input.placeholder}
+                  />
                 </div>
               ))}
 

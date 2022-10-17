@@ -28,10 +28,22 @@
         color: gray;
 
         &::placeholder {
-          font-size: 12px;
+          font-size: 14px;
         }
       }
+      input[type="text"] {
+        width: 100px;
+        border-bottom: 1px solid #999;
+        box-sizing: border-box;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+      }
+
+      input[type="text"]:focus {
+        width: 100%;
+      }
     }
+
     .items {
       display: flex;
       align-items: center;
@@ -43,6 +55,9 @@
 
         .icon {
           font-size: 20px;
+        }
+        .themeChange {
+          cursor: pointer;
         }
 
         .avatar {
