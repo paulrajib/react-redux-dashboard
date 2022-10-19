@@ -12,6 +12,7 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import Form from "./pages/form/Form";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
@@ -41,9 +42,10 @@ function App() {
             <Route path="products">
               <Route index element={<List />} />
               <Route path=":productID" element={<Single />} />
+              
               <Route
                 path="new"
-                element={<New inputs={productInputs} title="Add New Product" />}
+                element={<Form title="Add New Product" />}
               />
             </Route>
           </Route>
