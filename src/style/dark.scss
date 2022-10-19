@@ -1,4 +1,5 @@
 .app.dark {
+  height: 100vh;
   background-color: #111;
   color: rgb(156, 156, 156);
   .chartGrid {
@@ -73,5 +74,23 @@
       color: gray;
       opacity: 1;
     }
+  }
+
+  .checkbox-input input[type="checkbox"] {
+    accent-color: rgb(235, 224, 10);
+  }
+
+  .selecLibrary {
+    background-color: #333;
+    border: 1px solid #333;
+    color: gray;
+    border-radius: 5px;
+  }
+
+  .textArea {
+    background-color: #333;
+  }
+  .submitBtn {
+    background-color: #333;
   }
 }

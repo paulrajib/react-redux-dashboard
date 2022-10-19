@@ -7,9 +7,9 @@ import { useRef, useState } from "react";
 
 const Form = ({ title }) => {
   const [file, setFile] = useState("");
-  const [userTitle, setuserTitle] = useState("Title");
-  const [textAreaEditor, setTextAreaEditor] = useState("Type the desc here");
-  const [library, setLibrary] = useState("Select a library");
+  const [userTitle, setuserTitle] = useState("");
+  const [textAreaEditor, setTextAreaEditor] = useState("");
+  const [library, setLibrary] = useState("React");
   const [isChecked, setIsChecked] = useState(false);
   const [gender, setGender] = useState("");
 
@@ -34,7 +34,16 @@ const Form = ({ title }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(userTitle, textAreaEditor, library, isChecked, gender);
+    // URL.createObjectURL(file)
+    console.log(
+      file.name,
+      URL.createObjectURL(file),
+      userTitle,
+      textAreaEditor,
+      library,
+      isChecked,
+      gender
+    );
   };
 
   return (
@@ -59,7 +68,7 @@ const Form = ({ title }) => {
           <div className="right">
             <div>
               <form onSubmit={submitHandler}>
-                <div className="formInput">
+                <div className="formInput fileUpload">
                   <label htmlFor="file">
                     Image:
                     <DriveFolderUploadOutlinedIcon className="uploadIcon" />
@@ -91,6 +100,7 @@ const Form = ({ title }) => {
                     name="textarea"
                     className="textArea"
                     value={textAreaEditor}
+                    placeholder="Type the desc"
                     id="textareainput"
                     onChange={inputchangehandler}
                   />
@@ -100,6 +110,7 @@ const Form = ({ title }) => {
                   <label htmlFor=""></label>
                   <select
                     name="selectlibrary"
+                    className="selecLibrary"
                     value={library}
                     onChange={inputchangehandler}
                   >

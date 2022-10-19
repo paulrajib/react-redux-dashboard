@@ -1,4 +1,10 @@
 .form {
+  input {
+    color: gray;
+  }
+  .fileUpload {
+    margin-top: 10px;
+  }
   .checkbox-input {
     label {
       display: inline-block;
@@ -6,8 +12,10 @@
     input {
       width: 30px;
       margin-left: 10px;
+      color: gray;
     }
   }
+
   .radio-input {
     label {
       display: inline-block;
@@ -16,6 +24,12 @@
   input.radio-btn {
     width: 30px;
   }
+  .textArea {
+    border: navajowhite;
+    border-bottom: 1px solid gray;
+    color: gray;
+  }
+
   .submitBtn {
     width: 150px;
     padding: 10px;
