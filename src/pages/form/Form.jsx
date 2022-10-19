@@ -108,17 +108,18 @@ const Form = ({ title }) => {
                   </select>
                 </div>
 
-                <div className="formInput">
-                  <label htmlFor=""></label>
+                <div className="formInput checkbox-input">
+                  <label htmlFor="agree-t&c">Agree with T&C</label>
                   <input
                     type="checkbox"
                     name="checkbox1"
                     checked={isChecked}
+                    id="agree-t&c"
                     onChange={inputchangehandler}
                   />
                 </div>
 
-                <div className="formInput">
+                <div className="formInput radio-input">
                   <input
                     className="radio-btn"
                     type="radio"

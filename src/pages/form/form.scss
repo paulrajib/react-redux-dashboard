@@ -1,21 +1,29 @@
-
-.form{
-	.radio-input{
-		label{
-			display: inline-block;
-		}
-	}
-	input.radio-btn{
-		width: 30px;
-	}
-	.submitBtn{
-		width: 150px;
-		padding: 10px;
-		border: none;
-		background-color: teal;
-		color: white;
-		font-weight: bold;
-		cursor: pointer;
-		margin-top: 10px;
-	}
+.form {
+  .checkbox-input {
+    label {
+      display: inline-block;
+    }
+    input {
+      width: 30px;
+      margin-left: 10px;
+    }
+  }
+  .radio-input {
+    label {
+      display: inline-block;
+    }
+  }
+  input.radio-btn {
+    width: 30px;
+  }
+  .submitBtn {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 }
