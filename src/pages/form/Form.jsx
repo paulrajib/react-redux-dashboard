@@ -36,13 +36,13 @@ const Form = ({ title }) => {
     event.preventDefault();
     // URL.createObjectURL(file)
     console.log(
-      file.name,
-      URL.createObjectURL(file),
-      userTitle,
-      textAreaEditor,
-      library,
-      isChecked,
-      gender
+      "File name: " + file.name + "\n",
+      "File URL: " + URL.createObjectURL(file) + "\n",
+      "Usr title: " + userTitle + "\n",
+      "textArea:: " + textAreaEditor + "\n",
+      "Library used: " + library + "\n",
+      "Checkbox Status: " + isChecked + "\n",
+      "Gender: " + gender + "\n"
     );
   };
 

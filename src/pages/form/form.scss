@@ -4,6 +4,9 @@
   }
   .fileUpload {
     margin-top: 10px;
+    label {
+      max-width: 85px;
+    }
   }
   .uploadIcon {
     cursor: pointer;
