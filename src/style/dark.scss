@@ -1,5 +1,24 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  min-height: 100%;
+  //position: relative;
+}
+body {
+  height: 100%;
+}
 .app.dark {
-  height: 100vh;
+  //position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+  min-height: 100vh;
   background-color: #111;
   color: rgb(156, 156, 156);
   .chartGrid {
@@ -92,5 +111,21 @@
   }
   .submitBtn {
     background-color: #333;
+  }
+
+  .MuiDataGrid-footerContainer {
+    .MuiTablePagination-displayedRows {
+      color: gray;
+    }
+    button {
+      svg {
+        color: gray;
+      }
+      &.Mui-disabled {
+        svg {
+          color: rgba(128, 128, 128, 0.341);
+        }
+      }
+    }
   }
 }
