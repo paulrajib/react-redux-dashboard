@@ -7,43 +7,30 @@ import { useRef, useState } from "react";
 
 const Form = ({ title }) => {
   const [file, setFile] = useState("");
-  const [userTitle, setuserTitle] = useState("");
-  const [textAreaEditor, setTextAreaEditor] = useState("");
-  const [library, setLibrary] = useState("React");
-  const [isChecked, setIsChecked] = useState(false);
-  const [gender, setGender] = useState("");
 
-  const inputchangehandler = (event) => {
-    if (event.target.name === "title") {
-      setuserTitle(event.target.value);
-    } else if (event.target.name === "textarea") {
-      setTextAreaEditor(event.target.value);
-    } else if (event.target.name === "selectlibrary") {
-      setLibrary(event.target.value);
-    } else if (event.target.name === "checkbox1") {
-      //setIsChecked(event.target.checked);
-      setIsChecked(!isChecked);
-      //console.log(!isChecked);
-    } else if (event.target.type === "radio") {
-      setGender(event.target.value);
+  const [inputFields, setInputFields] = useState([
+    {
+      userTitle: "",
+      textAreaEditor: "",
+      library: "React",
+      isChecked: false,
+      gender: "",
+    },
+  ]);
+
+  const handleFormChange = (event, index) => {
+    let data = [...inputFields];
+    if (event.target.name === "isChecked") {
+      data[index][event.target.name] = event.target.checked;
     } else {
-      console.log(event.target.value);
+      data[index][event.target.name] = event.target.value;
     }
-    //console.log(event.target.value);
+    setInputFields(data);
   };
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    // URL.createObjectURL(file)
-    console.log(
-      "File name: " + file.name + "\n",
-      "File URL: " + URL.createObjectURL(file) + "\n",
-      "Usr title: " + userTitle + "\n",
-      "textArea:: " + textAreaEditor + "\n",
-      "Library used: " + library + "\n",
-      "Checkbox Status: " + isChecked + "\n",
-      "Gender: " + gender + "\n"
-    );
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(inputFields);
   };
 
   return (
@@ -66,95 +53,102 @@ const Form = ({ title }) => {
             />
           </div>
           <div className="right">
-            <div>
-              <form onSubmit={submitHandler}>
-                <div className="formInput fileUpload">
-                  <label htmlFor="file">
-                    Image:
-                    <DriveFolderUploadOutlinedIcon className="uploadIcon" />
-                  </label>
-                  <input
-                    type="file"
-                    id="file"
-                    onChange={(e) => setFile(e.target.files[0])}
-                    style={{ display: "none" }}
-                  />
-                </div>
+            <form onSubmit={submit} className="commonForm">
+              {inputFields.map((form, index) => {
+                return (
+                  <div key={index} className="formInputs">
+                    <div className="formInput fileUpload">
+                      <label htmlFor="file">
+                        Image:
+                        <DriveFolderUploadOutlinedIcon className="uploadIcon" />
+                      </label>
+                      <input
+                        type="file"
+                        id="file"
+                        onChange={(e) => setFile(e.target.files[0])}
+                        style={{ display: "none" }}
+                      />
+                    </div>
+                    <div className="formInput">
+                      <label htmlFor="titleinput"></label>
+                      <input
+                        name="userTitle"
+                        type="text"
+                        className="textInput"
+                        placeholder="EnterTitle"
+                        value={form.userTitle}
+                        id="titleinput"
+                        onChange={(event) => handleFormChange(event, index)}
+                      />
+                    </div>
 
-                <div className="formInput">
-                  <label htmlFor="titleinput"></label>
-                  <input
-                    name="title"
-                    type="text"
-                    className="textInput"
-                    placeholder="EnterTitle"
-                    value={userTitle}
-                    id="titleinput"
-                    onChange={inputchangehandler}
-                  />
-                </div>
+                    <div className="formInput">
+                      <label htmlFor="textareainput"></label>
+                      <textarea
+                        name="textAreaEditor"
+                        className="textArea"
+                        value={form.textAreaEditor}
+                        placeholder="Type the desc"
+                        id="textareainput"
+                        onChange={(event) => handleFormChange(event, index)}
+                      />
+                    </div>
 
-                <div className="formInput">
-                  <label htmlFor="textareainput"></label>
-                  <textarea
-                    name="textarea"
-                    className="textArea"
-                    value={textAreaEditor}
-                    placeholder="Type the desc"
-                    id="textareainput"
-                    onChange={inputchangehandler}
-                  />
-                </div>
+                    <div className="formInput">
+                      <label htmlFor=""></label>
+                      <select
+                        name="library"
+                        className="selecLibrary"
+                        value={form.library}
+                        onChange={(event) => handleFormChange(event, index)}
+                      >
+                        <option value="React">React</option>
+                        <option value="Angular">Angular</option>
+                      </select>
+                    </div>
 
-                <div className="formInput">
-                  <label htmlFor=""></label>
-                  <select
-                    name="selectlibrary"
-                    className="selecLibrary"
-                    value={library}
-                    onChange={inputchangehandler}
-                  >
-                    <option value="React">React</option>
-                    <option value="Angular">Angular</option>
-                  </select>
-                </div>
+                    <div className="formInput checkbox-input">
+                      <label htmlFor="agree-t&c">Agree with T&C</label>
+                      <input
+                        type="checkbox"
+                        name="isChecked"
+                        checked={form.isChecked}
+                        id="agree-t&c"
+                        onChange={(event) => handleFormChange(event, index)}
+                      />
+                    </div>
 
-                <div className="formInput checkbox-input">
-                  <label htmlFor="agree-t&c">Agree with T&C</label>
-                  <input
-                    type="checkbox"
-                    name="checkbox1"
-                    checked={isChecked}
-                    id="agree-t&c"
-                    onChange={inputchangehandler}
-                  />
-                </div>
+                    <div className="formInput radio-input">
+                      <input
+                        className="radio-btn"
+                        type="radio"
+                        value="male"
+                        id="male"
+                        onChange={(event) => handleFormChange(event, index)}
+                        name="gender"
+                      />
+                      <label htmlFor="male">Male</label>
 
-                <div className="formInput radio-input">
-                  <input
-                    className="radio-btn"
-                    type="radio"
-                    value="male"
-                    id="male"
-                    onChange={inputchangehandler}
-                    name="gender"
-                  />
-                  <label htmlFor="male">Male</label>
-
-                  <input
-                    className="radio-btn"
-                    type="radio"
-                    value="female"
-                    id="female"
-                    onChange={inputchangehandler}
-                    name="gender"
-                  />
-                  <label htmlFor="female">Female</label>
-                </div>
-
-                <input type="submit" className="submitBtn" value="Submit" />
-              </form>
-            </div>
+                      <input
+                        className="radio-btn"
+                        type="radio"
+                        value="female"
+                        id="female"
+                        onChange={(event) => handleFormChange(event, index)}
+                        name="gender"
+                      />
+                      <label htmlFor="female">Female</label>
+                    </div>
+                    <input
+                      type="submit"
+                      className="submitBtn"
+                      value="Submit"
+                      onClick={submit}
+                    />
+                  </div>
+                );
+              })}
+            </form>
           </div>
         </div>
       </div>

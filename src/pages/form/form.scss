@@ -1,49 +1,69 @@
-.form {
-  input {
-    color: gray;
-  }
-  .fileUpload {
-    margin-top: 10px;
-    label {
-      max-width: 85px;
+.right {
+  flex: 3;
+  .commonForm {
+    input {
+      width: 100%;
     }
-  }
-  .uploadIcon {
-    cursor: pointer;
-  }
-  .checkbox-input {
-    label {
-      display: inline-block;
+    .formInputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+
+      .formInput {
+        width: 40%;
+      }
+
+      .submitInput {
+        width: 100%;
+      }
     }
     input {
-      width: 30px;
-      margin-left: 10px;
       color: gray;
     }
-  }
-
-  .radio-input {
-    label {
-      display: inline-block;
+    .fileUpload {
+      margin-top: 10px;
+      label {
+        max-width: 85px;
+      }
     }
-  }
-  input.radio-btn {
-    width: 30px;
-  }
-  .textArea {
-    border: navajowhite;
-    border-bottom: 1px solid gray;
-    color: gray;
-  }
+    .uploadIcon {
+      cursor: pointer;
+    }
 
-  .submitBtn {
-    width: 150px;
-    padding: 10px;
-    border: none;
-    background-color: teal;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
+    .checkbox-input {
+      label {
+        display: inline-block;
+      }
+      input {
+        width: 30px;
+        margin-left: 10px;
+        color: gray;
+      }
+    }
+    .radio-input {
+      label {
+        display: inline-block;
+      }
+    }
+    input.radio-btn {
+      width: 30px;
+    }
+    .textArea {
+      border: navajowhite;
+      border-bottom: 1px solid gray;
+      color: gray;
+    }
+    .submitBtn {
+      width: 150px;
+      height: 50px;
+      padding: 10px;
+      border: none;
+      background-color: teal;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
   }
 }
