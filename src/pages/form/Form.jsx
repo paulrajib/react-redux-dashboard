@@ -3,6 +3,8 @@ import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
+import { test, output_input } from "../../lib/Common-functions";
+
 import { useRef, useState } from "react";
 
 const Form = ({ title }) => {
@@ -25,13 +27,42 @@ const Form = ({ title }) => {
     } else {
       data[index][event.target.name] = event.target.value;
     }
+    console.log(event.target.value);
+    // console.log(event.target.name);
     setInputFields(data);
   };
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(inputFields);
+    //console.log(inputFields);
+    console.log(inputFields.AccountEmail);
   };
+
+  // $name,
+  // $title,
+  // $placeHolder,
+  // $required = false,
+  // $type = "text",
+  // $class = "",
+  // $attributes = ""
+
+  const title_input_1 = output_input(
+    "AccountEmail",
+    "Custom field 1",
+    "type ur title here",
+    false,
+    "text"
+  );
+
+  const pass_input_1 = output_input(
+    "Password",
+    "Custom field 2",
+    "type ur password here",
+    false,
+    "password"
+  );
+
+  // const testdata = `{(event) => handleFormChange(event, index)}`;
 
   return (
     <div className="new form">
@@ -59,7 +90,7 @@ const Form = ({ title }) => {
                   <div key={index} className="formInputs">
                     <div className="formInput fileUpload">
                       <label htmlFor="file">
-                        Image:
+                        Image:AccountEmail
                         <DriveFolderUploadOutlinedIcon className="uploadIcon" />
                       </label>
                       <input
@@ -69,6 +100,22 @@ const Form = ({ title }) => {
                         style={{ display: "none" }}
                       />
                     </div>
+
+                    {/* inputs by function call */}
+                    {/* <div className="formInput">{ title_input_1 }</div> */}
+
+                    <div
+                      className="formInput"
+                      dangerouslySetInnerHTML={{ __html: title_input_1 }}
+                    ></div>
+                    <div
+                      className="formInput"
+                      dangerouslySetInnerHTML={{ __html: pass_input_1 }}
+                    ></div>
+
+                    {/* End of inputs by function call */}
+
+
                     <div className="formInput">
                       <label htmlFor="titleinput"></label>
                       <input
