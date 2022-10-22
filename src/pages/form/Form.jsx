@@ -3,67 +3,14 @@ import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
-import { test, output_input } from "../../lib/Common-functions";
-
-import { useRef, useState } from "react";
+import { useState } from "react";
+import useCommonForm from "../../lib/CustomHooks";
 
 const Form = ({ title }) => {
+  
   const [file, setFile] = useState("");
-
-  const [inputFields, setInputFields] = useState([
-    {
-      userTitle: "",
-      textAreaEditor: "",
-      library: "React",
-      isChecked: false,
-      gender: "",
-    },
-  ]);
-
-  const handleFormChange = (event, index) => {
-    let data = [...inputFields];
-    if (event.target.name === "isChecked") {
-      data[index][event.target.name] = event.target.checked;
-    } else {
-      data[index][event.target.name] = event.target.value;
-    }
-    console.log(event.target.value);
-    // console.log(event.target.name);
-    setInputFields(data);
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
-    //console.log(inputFields);
-    console.log(inputFields.AccountEmail);
-  };
-
-  // $name,
-  // $title,
-  // $placeHolder,
-  // $required = false,
-  // $type = "text",
-  // $class = "",
-  // $attributes = ""
-
-  const title_input_1 = output_input(
-    "AccountEmail",
-    "Custom field 1",
-    "type ur title here",
-    false,
-    "text"
-  );
-
-  const pass_input_1 = output_input(
-    "Password",
-    "Custom field 2",
-    "type ur password here",
-    false,
-    "password"
-  );
-
-  // const testdata = `{(event) => handleFormChange(event, index)}`;
-
+  const { inputFields, handleFormChange, handleFormSubmit } = useCommonForm();
+  
   return (
     <div className="new form">
       <Sidebar />
@@ -77,20 +24,20 @@ const Form = ({ title }) => {
             <img
               src={
                 file
-                  ? URL.createObjectURL(file)
-                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                ? URL.createObjectURL(file)
+                : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
               }
               alt=""
-            />
+              />
           </div>
           <div className="right">
-            <form onSubmit={submit} className="commonForm">
+            <form onSubmit={handleFormSubmit} className="commonForm">
               {inputFields.map((form, index) => {
                 return (
                   <div key={index} className="formInputs">
                     <div className="formInput fileUpload">
                       <label htmlFor="file">
-                        Image:AccountEmail
+                        Image:
                         <DriveFolderUploadOutlinedIcon className="uploadIcon" />
                       </label>
                       <input
@@ -100,24 +47,8 @@ const Form = ({ title }) => {
                         style={{ display: "none" }}
                       />
                     </div>
-
-                    {/* inputs by function call */}
-                    {/* <div className="formInput">{ title_input_1 }</div> */}
-
-                    <div
-                      className="formInput"
-                      dangerouslySetInnerHTML={{ __html: title_input_1 }}
-                    ></div>
-                    <div
-                      className="formInput"
-                      dangerouslySetInnerHTML={{ __html: pass_input_1 }}
-                    ></div>
-
-                    {/* End of inputs by function call */}
-
-
                     <div className="formInput">
-                      <label htmlFor="titleinput"></label>
+                      <label htmlFor="titleinput">Title</label>
                       <input
                         name="userTitle"
                         type="text"
@@ -130,7 +61,7 @@ const Form = ({ title }) => {
                     </div>
 
                     <div className="formInput">
-                      <label htmlFor="textareainput"></label>
+                      <label htmlFor="textareainput">Desc</label>
                       <textarea
                         name="textAreaEditor"
                         className="textArea"
@@ -190,7 +121,7 @@ const Form = ({ title }) => {
                       type="submit"
                       className="submitBtn"
                       value="Submit"
-                      onClick={submit}
+                      onClick={handleFormSubmit}
                     />
                   </div>
                 );

@@ -14,16 +14,14 @@ export function output_input(
   $data["attributes"] = $attributes;
   $data["type"] = $type;
   $data["class"] = $class;
-  // let $onchange = '';
-  function testfun(e){
-    console.log("testing success");
-  };
-  let $onchange = `testfun()`;
+
+
+  let $onchange = '';
   let $inputHtml = "";
 
   $inputHtml = '<label for="' + $id + '" class="control-label">' + $title;
   // if required
-  if ($required == true) {
+  if ($required === true) {
     $inputHtml += '<span class="required">*</span>';
   }
   $inputHtml += '</label><div class="controls">';

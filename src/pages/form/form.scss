@@ -1,9 +1,6 @@
 .right {
   flex: 3;
   .commonForm {
-    input {
-      width: 100%;
-    }
     .formInputs {
       display: flex;
       flex-wrap: wrap;
@@ -20,11 +17,17 @@
     }
     input {
       color: gray;
+      width: 100%;
+    }
+    .textInput{
+      border: none;
+      border-bottom: 1px solid gray;
     }
     .fileUpload {
       margin-top: 10px;
       label {
         max-width: 85px;
+        margin-right: 25px;
       }
     }
     .uploadIcon {
