@@ -1,0 +1,15 @@
+$body-bg: gray;
+
+body {
+  background-color: $body-bg;
+}
+
+// Form
+
+form {
+  .formInput {
+    label {
+      margin-right: 15px;
+    }
+  }
+}

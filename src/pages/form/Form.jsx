@@ -1,21 +1,18 @@
 import "./form.scss";
-import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
+// import Navbar from "../../components/navbar/Navbar";
+// import Sidebar from "../../components/sidebar/Sidebar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
 import { useState } from "react";
 import useCommonForm from "../../lib/CustomHooks";
 
 const Form = ({ title }) => {
-  
   const [file, setFile] = useState("");
   const { inputFields, handleFormChange, handleFormSubmit } = useCommonForm();
-  
+
   return (
     <div className="new form">
-      <Sidebar />
       <div className="newContainer">
-        <Navbar />
         <div className="top">
           <h1 className="title">Add New User</h1>
         </div>
@@ -24,11 +21,11 @@ const Form = ({ title }) => {
             <img
               src={
                 file
-                ? URL.createObjectURL(file)
-                : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                  ? URL.createObjectURL(file)
+                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
               }
               alt=""
-              />
+            />
           </div>
           <div className="right">
             <form onSubmit={handleFormSubmit} className="commonForm">

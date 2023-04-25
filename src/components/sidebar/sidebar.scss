@@ -1,3 +1,9 @@
+// @import 'bootstrap/scss/functions';
+// @import 'bootstrap/scss/variables';
+// @import 'bootstrap/scss/mixins';
+
+@import "bootstrap/scss/bootstrap.scss";
+
 .sidebar {
   background-color: lightcoral;
   flex: 0.82;
@@ -75,6 +81,11 @@
   transform: rotate(-135deg);
 }
 
+.brand .logo {
+  @include media-breakpoint-up(sm) {
+    text-align: left;
+  }
+}
 .button {
   height: 50px;
   position: relative;
@@ -107,7 +118,7 @@
   color: #5197f8d0;
   line-height: 50px;
   display: block;
-  text-align: center;
+  text-align: left;
   font-size: 14px;
   font-weight: bold;
 }

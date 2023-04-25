@@ -45,7 +45,6 @@ export const userInputs = [
     label: "Country",
     type: "text",
     placeholder: "USA",
-    placeholder: "USA",
   },
 ];
 

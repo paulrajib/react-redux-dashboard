@@ -6,6 +6,7 @@ import "./sidebar.scss";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
+import LogoPng from "../../assets/imgs/logo.png";
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
@@ -13,7 +14,9 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="nav-side-menu">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <div className="brand">Brand Logo</div>
+          <div className="brand">
+            <img className="logo" src={LogoPng} alt="Logo" width="50px" />
+          </div>
         </Link>
 
         <button
@@ -38,9 +41,9 @@ const Sidebar = () => {
           <ul id="menu-content" className="menu-content collapse out">
             <li>
               {/* // eslint-disable-next-line */}
-              <a href="#">
+              <Link to="#">
                 <i className="fas fa-tachometer-alt fa-lg"></i> Dashboard
-              </a>
+              </Link>
             </li>
 
             <li
@@ -49,10 +52,10 @@ const Sidebar = () => {
               className="collapsed active"
             >
               {/* // eslint-disable-next-line */}
-              <a href="#">
+              <Link to="#">
                 <i className="fab fa-studiovinari fa-lg"></i> UI Elements{" "}
                 <span className="arrow"></span>
-              </a>
+              </Link>
             </li>
             <ul className="sub-menu collapse" id="elements">
               <li className="active">
@@ -93,10 +96,10 @@ const Sidebar = () => {
               className="collapsed"
             >
               {/* // eslint-disable-next-line */}
-              <a href="#">
+              <Link to="#">
                 <i className="fab fa-fort-awesome-alt fa-lg"></i> Services{" "}
                 <span className="arrow"></span>
-              </a>
+              </Link>
             </li>
             <ul className="sub-menu collapse" id="service">
               <li>New Service 1</li>
@@ -110,10 +113,10 @@ const Sidebar = () => {
               className="collapsed"
             >
               {/* // eslint-disable-next-line */}
-              <a href="#">
+              <Link to="#">
                 <i className="fa fa-users fa-lg"></i> Users{" "}
                 <span className="arrow"></span>
-              </a>
+              </Link>
             </li>
             <ul className="sub-menu collapse" id="users">
               <Link to="/users" style={{ textDecoration: "none" }}>
@@ -132,10 +135,10 @@ const Sidebar = () => {
               className="collapsed"
             >
               {/* // eslint-disable-next-line */}
-              <a href="#">
+              <Link to="#">
                 <i className="fab fa-pagelines fa-lg"></i> Products{" "}
                 <span className="arrow"></span>
-              </a>
+              </Link>
             </li>
             <ul className="sub-menu collapse" id="products">
               <Link to="/products" style={{ textDecoration: "none" }}>

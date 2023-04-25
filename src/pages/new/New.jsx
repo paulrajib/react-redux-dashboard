@@ -1,14 +1,13 @@
-import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import "./new.scss";
-import { useRef, useState } from "react";
+// import { useRef, useState } from "react";
+import { useState } from "react";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [username, setUsername] = useState("");
 
-  const usernameRef = useRef();
+  // const usernameRef = useRef();
 
   console.log(username);
 
@@ -20,9 +19,7 @@ const New = ({ inputs, title }) => {
 
   return (
     <div className="new">
-      <Sidebar />
       <div className="newContainer">
-        <Navbar />
         <div className="top">
           <h1 className="title">Add New User</h1>
         </div>
@@ -55,7 +52,6 @@ const New = ({ inputs, title }) => {
               {inputs.map((input) => (
                 <div
                   className="formInput"
-                  setUsername={setUsername}
                   key={input.id}
                 >
                   <label htmlFor="">{input.label}</label>
